@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Button from "../UI/Button";
 
 const AddUser = props => {
     const [username, setUsername] = useState("");
@@ -27,7 +28,7 @@ const AddUser = props => {
                    value={age}
                    onChange={(event) => setAge(+event.target.value)}/>
 
-            <button type={"submit"}/>
+            <Button name={"addUserButton"} id ={"addUserButton"} type={"submit"}>Add User</Button>
         </form>
     );
 };
