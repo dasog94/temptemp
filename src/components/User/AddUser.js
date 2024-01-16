@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import Button from "../UI/Button";
+import Card from "../UI/Card";
+import classes from "./AddUser.module.css";
 
 const AddUser = props => {
     const [username, setUsername] = useState("");
@@ -15,21 +17,23 @@ const AddUser = props => {
     };
 
     return (
-        <form onSubmit={submitHandler}>
-            <label htmlFor="userName">Username</label>
-            <input type={"text"}
-                   id={"userName"}
-                   value={username}
-                   onChange={(event) => setUsername(event.target.value)}/>
+        <Card className={classes.input}>
+            <form onSubmit={submitHandler}>
+                <label htmlFor="userName">Username</label>
+                <input type={"text"}
+                       id={"userName"}
+                       value={username}
+                       onChange={(event) => setUsername(event.target.value)}/>
 
-            <label htmlFor="age">Age(Years)</label>
-            <input type={"number"}
-                   id={"age"}
-                   value={age}
-                   onChange={(event) => setAge(+event.target.value)}/>
+                <label htmlFor="age">Age(Years)</label>
+                <input type={"number"}
+                       id={"age"}
+                       value={age}
+                       onChange={(event) => setAge(+event.target.value)}/>
 
-            <Button name={"addUserButton"} id ={"addUserButton"} type={"submit"}>Add User</Button>
-        </form>
+                <Button type={"submit"}>Add User</Button>
+            </form>
+        </Card>
     );
 };
 
